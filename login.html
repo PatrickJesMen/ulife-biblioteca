@@ -61,19 +61,6 @@
         </section>
 
     </main>
-
-    <script>
-        const campoSenha = document.getElementById('senha');
-        const botaoAlternar = document.getElementById('alternar-senha');
-        const iconeOlho = document.getElementById('icone-olho');
-
-        botaoAlternar.addEventListener('click', () => {
-            const tipo = campoSenha.getAttribute('type') === 'password' ? 'text' : 'password';
-            campoSenha.setAttribute('type', tipo);
-            
-            iconeOlho.classList.toggle('fa-eye-slash');
-            iconeOlho.classList.toggle('fa-eye');
-        });
-    </script>
+    <script src="static/js/login.js"></script>
 </body>
 </html>
