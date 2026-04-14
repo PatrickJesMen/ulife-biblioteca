@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Acesso - Ulife</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/login.css">
+</head>
+<body>
+
+    <main class="pagina__principal">
+        
+        <section class="secao__login">
+            <div class="cartao__login">
+                <img src="static/image/ulife-logo.svg" alt="Logo Ulife" class="cartao__login__logo">
+                
+                <h1 class="cartao__login__titulo">Portal de Acesso</h1>
+                <p class="cartao__login__subtitulo">Bem-vindo(a) ao Ulife!</p>
+
+                <form action="#" class="formulario__login">
+                    
+                    <div class="formulario__grupo">
+                        <div class="formulario__icone__fundo">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="formulario__campo__container">
+                            <input type="text" id="usuario" class="formulario__input" placeholder=" " required>
+                            <label for="usuario" class="formulario__rotulo">Usuário</label>
+                        </div>
+                    </div>
+
+                    <div class="formulario__grupo">
+                        <div class="formulario__icone__fundo">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+                        <div class="formulario__campo__container">
+                            <input type="password" id="senha" class="formulario__input" placeholder=" " required>
+                            <label for="senha" class="formulario__rotulo">Senha</label>
+                            <div class="formulario__icone__olho" id="alternar-senha">
+                                <i class="fa-solid fa-eye-slash" id="icone-olho"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="formulario__botao">Entrar</button>
+                </form>
+            </div>
+
+            <footer class="rodape__login">
+                Matemática Computacional Aplicada | 2026
+            </footer>
+        </section>
+
+        <section class="secao__banner">
+            <div class="secao__banner__efeito"></div>
+            <img src="static/image/ulife-logo.svg" alt="Logo Ulife Grande" class="secao__banner__logo">
+        </section>
+
+    </main>
+
+    <script>
+        const campoSenha = document.getElementById('senha');
+        const botaoAlternar = document.getElementById('alternar-senha');
+        const iconeOlho = document.getElementById('icone-olho');
+
+        botaoAlternar.addEventListener('click', () => {
+            const tipo = campoSenha.getAttribute('type') === 'password' ? 'text' : 'password';
+            campoSenha.setAttribute('type', tipo);
+            
+            iconeOlho.classList.toggle('fa-eye-slash');
+            iconeOlho.classList.toggle('fa-eye');
+        });
+    </script>
+</body>
+</html>

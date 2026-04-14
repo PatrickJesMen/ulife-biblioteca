@@ -1,0 +1,233 @@
+/* ==========================================================================
+   VARIÁVEIS DE CORES E MEDIDAS (:root)
+   ========================================================================== */
+:root {
+    --cor-primaria: #8b2b9f;
+    --cor-primaria-clara: #a542b9;
+    --cor-primaria-escura: #6a1b7a;
+    --cor-fundo-claro: #f8f9fc;
+    --cor-branco: #ffffff;
+    --cor-texto-titulo: #8b2b9f;
+    --cor-texto-corpo: #555555;
+    --cor-texto-rodape: #999999;
+    --cor-borda: #e0e0e0;
+    
+    --sombra-sofisticada: 0 20px 45px rgba(0, 0, 0, 0.18), 0 10px 20px rgba(0, 0, 0, 0.12);
+    --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   ESTRUTURA PRINCIPAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.pagina__principal {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.secao__login {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-fundo-claro);
+    position: relative;
+    padding: 20px;
+}
+
+.secao__banner {
+    flex: 1.2;
+    background: linear-gradient(135deg, #8b2b9f 0%, #4a148c 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.secao__banner__efeito {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+}
+
+.secao__banner__logo {
+    width: 50%;
+    max-width: 450px;
+    z-index: 1;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   CARTÃO DE LOGIN
+   ========================================================================== */
+.cartao__login {
+    background-color: var(--cor-branco);
+    width: 100%;
+    max-width: 440px;
+    padding: 50px 40px;
+    border-radius: 16px;
+    box-shadow: var(--sombra-sofisticada);
+}
+
+.cartao__login__logo {
+    width: 42px;
+    margin-bottom: 24px;
+}
+
+.cartao__login__titulo {
+    color: var(--cor-texto-titulo);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.cartao__login__subtitulo {
+    color: var(--cor-texto-corpo);
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+
+/* ==========================================================================
+   FORMULÁRIO E INPUTS FLUTUANTES
+   ========================================================================== */
+.formulario__login {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario__grupo {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid var(--cor-borda);
+    border-radius: 10px;
+    transition: var(--transicao-suave);
+    background-color: var(--cor-branco);
+    overflow: hidden;
+}
+
+.formulario__grupo:focus-within {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 15px rgba(139, 43, 159, 0.4);
+}
+
+.formulario__icone__fundo {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    height: 54px;
+    width: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.formulario__campo__container {
+    flex: 1;
+    position: relative;
+    height: 54px;
+}
+
+.formulario__input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 18px 45px 6px 15px; /* Aumentado o padding direito para 45px */
+    font-size: 15px;
+    background: transparent;
+    color: #333;
+}
+
+.formulario__rotulo {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--cor-primaria);
+    font-weight: 600;
+    font-size: 14px;
+    pointer-events: none;
+    transition: var(--transicao-suave);
+}
+
+.formulario__input:focus ~ .formulario__rotulo,
+.formulario__input:not(:placeholder-shown) ~ .formulario__rotulo {
+    top: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.formulario__icone__olho {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+    cursor: pointer;
+    padding: 5px;
+    transition: var(--transicao-suave);
+}
+
+.formulario__icone__olho:hover {
+    color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   BOTÃO E RODAPÉ
+   ========================================================================== */
+.formulario__botao {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao-suave);
+    margin-top: 10px;
+}
+
+.formulario__botao:hover {
+    background-color: var(--cor-primaria-escura);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(106, 27, 122, 0.3);
+}
+
+.rodape__login {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    color: var(--cor-texto-rodape);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 900px) {
+    .secao__banner {
+        display: none;
+    }
+    .rodape__login {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 40px;
+        text-align: center;
+    }
+}
